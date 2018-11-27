@@ -1,0 +1,268 @@
+{
+	"brandName": "DLT Systems",
+	"brandImage": "",
+	"facebookLink": "",
+	"twitterLink": "",
+	"linkedInLink": "",
+	"years": "2017 - 2018",
+	"footerAboutTitle": "Short about us",
+	"footerAbout": "Cryptojokeys. Bringing change to this world. One coin at a time.",
+	"subscriptionUrl": "#",
+	"subscriptionAbout": "Subscribe to our newsletter to be in informed about our offers and discounts!",
+	"returnTitle": "Not yet convinced with our quality?",
+	"returnButton": "Explore Services",
+	"returnLink": "#services",
+	"options": {
+		"search": false,
+		"services": true,
+		"hero": true,
+		"about": false,
+		"progress": false,
+		"works": false,
+		"team": false,
+		"direct": true,
+		"pricing": true,
+		"testimonial": false,
+		"blog": false,
+		"contact": true,
+		"return": true,
+		"explanation": true
+	},
+	"menu": [
+		{ "link": "#top", "title": "Home" },
+		{ "link": "#services", "title": "Services" },
+		{ "link": "#prices", "title": "Prices" },
+		{ "link": "#contact", "title": "Contact" }
+	],
+	"workTitle": "Remarkable works",
+	"workDescription": "Look at our great projects",
+	"workCategories": [
+		{
+			"index": "1",
+			"name": "chess"
+		},
+		{
+			"index": "2",
+			"name": "fruits"
+		},
+		{
+			"index": "3",
+			"name": "minerals"
+		},
+		{
+			"index": "4",
+			"name": "art"
+		}
+	],
+	"progress": [
+		{
+			"progress": 35,
+			"title": "Shit"
+		},
+		{
+			"progress": 55,
+			"title": "Junk"
+		},
+		{
+			"progress": 15,
+			"title": "Garbage"
+		},
+		{
+			"progress": 25,
+			"title": "Bad"
+		}
+	],
+	"works": [
+		{
+			"categories": "category-1",
+			"index": "1",
+			"image": "img/c1.jpg",
+			"title": "Crypto manipulation, state of art",
+			"tags": "CRYPTO, JS, SCRYPT"
+		},
+		{
+			"categories": "category-4",
+			"index": "2",
+			"image": "img/c2.jpg",
+			"title": "Crypto manipulation, state of art",
+			"tags": "CRYPTO, JS, SCRYPT"
+		},
+		{
+			"categories": "category-2",
+			"index": "3",
+			"image": "img/c3.jpg",
+			"title": "Crypto manipulation, state of art",
+			"tags": "CRYPTO, JS, SCRYPT"
+		},
+		{
+			"categories": "category-3",
+			"index": "4",
+			"image": "img/c4.jpg",
+			"title": "Crypto manipulation, state of art",
+			"tags": "CRYPTO, JS, SCRYPT"
+		}
+	],
+	"directTitle": "Get ready for crypo revolution!",
+	"directMotto": "Move forward, skip fiat!",
+	"directDescription": "Let`s talk about your idea and implement it using blockchain technology of your choice.",
+	"directButtonTitle": "Contact us",
+	"directButtonLink": "#contact",
+	"blogTitle": "Latest From Blog",
+	"blogDescription": "Here is the latest and greatest news",
+	"blogEntryButton": "More",
+	"blog": [
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/p1.jpg", "link": "#", "author": "John Doe", "published": "2018-01-01"
+		},
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/p2.jpg", "link": "#", "author": "John Doe", "published": "2018-01-01"
+		},
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/p3.jpg", "link": "#", "author": "John Doe", "published": "2018-01-01"
+		}
+	],
+	"contactTitle": "Connect with us",
+	"contactDescription": "Fill this form and we will be in touch!",
+	"contactFiller": "Please no unsolicited messages and spam! We only answer to serious questions!",
+	"contactAddress": "",
+	"contactPhone": "",
+	"contactFormLink": "#",
+	"testimonials": [
+		{ "image": "img/ts1.png", "quote": "Great service! My wife now millionaire!", 
+			"from": "Bill Gates", "fromLink": "https://billgates.com", "fromPosition": "CEO" },
+		{ "image": "img/ts2.png", "quote": "Great service! My wife now millionaire!", 
+			"from": "Bill Gates", "fromLink": "https://billgates.com", "fromPosition": "CEO" },
+		{ "image": "img/ts3.png", "quote": "Great service! My wife now millionaire!", 
+			"from": "Bill Gates", "fromLink": "https://billgates.com", "fromPosition": "CEO" }
+	],
+	"hero": {
+		"title": "Cryptocurrency as a service",
+		"description": "Launch your cryptocurrency today! Full service for your own crypto!",
+		"description2": " We provide cutting edge services to help you change the world by creating new cryptocurrency based on your design.",
+		"buttonLink": "#services",
+		"buttonTitle": "I am interested"
+	},
+	"aboutTitle": "Highlights",
+	"aboutDescription": "Creating digital services for years, we are ready to provide our expertise to blockchain world!",
+	"aboutServices": [
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/s1.jpg", "buttonLink": "#", "buttonTitle": "More info"
+		},
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/s1.jpg", "buttonLink": "#", "buttonTitle": "More info"
+		},
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/s1.jpg", "buttonLink": "#", "buttonTitle": "More info"
+		},
+		{ 
+			"title": "dsdsds", "description": "dasd sa dkjsah dkj hsa khdsa", 
+			"image": "img/s1.jpg", "buttonLink": "#", "buttonTitle": "More info"
+		}
+	],
+	"competencyTitle": "Ready to serve",
+	"competencyDescription": "Our core compentencies include:",
+	"competency": [
+		{ "link": "#packages", "icon": "lnr lnr-cog", 
+			"title": "Blockchain development", "description": "We can create Bitcoin based cryptocoin." },
+		{ "link": "#packages", "icon": "lnr lnr-paperclip", 
+			"title": "DASH based development", "description": "We can create DASH based cryptocoin." },
+		{ "link": "#packages", "icon": "lnr lnr-smartphone", 
+			"title": "Android/Java development", "description": "Can create you Android wallet." },
+		{ "link": "#packages", "icon": "lnr lnr-layers", 
+			"title": "Docker/DevOps services", "description": "Everything deployed using Docker." }
+	],
+	"teamTitle": "People you can trust",
+	"teamDescription": "Highly skilled people to help you achieve your success",
+	"team": [
+		{ "image": "img/t1.jpg", "bio": "Enterpreneur with style, doing everything possible", 
+			"name": "Tim Lee", "position": "Senior Engineer" },
+		{ "image": "img/t1.jpg", "bio": "Enterpreneur with style, doing everything possible", 
+			"name": "Tim Lee", "position": "Senior Engineer" },
+		{ "image": "img/t1.jpg", "bio": "Enterpreneur with style, doing everything possible", 
+			"name": "Tim Lee", "position": "Senior Engineer" },
+		{ "image": "img/t1.jpg", "bio": "Enterpreneur with style, doing everything possible", 
+			"name": "Tim Lee", "position": "Senior Engineer" }
+	],
+	"pricingTitle": "Our packages",
+	"pricingDescription": "We provide prepackaged services which include most popular features.",
+	"prices": [
+		{
+			"title": "gamma",
+			"logo": "lnr lnr-leaf",
+			"features": [
+				"Windows (x86, x64) wallet",
+				"Linux (x64) wallet",
+				"Blockchain explorer",
+				"Fully functional private mining pool",
+				"Premine (optional)",
+				"Masternode support (for DASH clones)",
+				"Source code for everything",
+				"Virtual machine with build environment",
+				"Build and release documentation"
+			],
+			"price": "1 BTC",
+			"payment": "ETA 5 days",
+			"buttonTitle": "More info",
+			"buttonLink": "#explanation"
+		},
+		{
+			"title": "zeta",
+			"logo": "lnr lnr-apartment",
+			"features": [
+				"Everything in gamma package",
+				"Android wallet",
+				"Deployment of production seed nodes",
+				"Initial setup of masternodes (DASH)"
+			],
+			"price": "2 BTC",
+			"payment": "ETA 5-10 days",
+			"buttonTitle": "More info",
+			"buttonLink": "#explanation"
+		},
+		{
+			"title": "lambda",
+			"logo": "lnr lnr-diamond",
+			"features": [
+				"Everything in zeta package",
+				"iOS wallet",
+				"Support for 1 month"
+			],
+			"price": "3 BTC",
+			"payment": "ETA 5-30 days",
+			"buttonTitle": "More info",
+			"buttonLink": "#explanation"
+		}
+	],
+	"requirementsTitle": "To successfully implement you must provide following:",
+	"requirements": [
+		"GitHub account (destination for all sources, can be private)",
+		"Management VPS",
+		"2-5 VPS for seed nodes",
+		"Domain name",
+		"Coin parameters (with our assistance)",
+		"Dropbox release account"
+	],
+	"notIncluded": [
+		"Provision of VPS",
+		"Logo and design customization"
+	],
+	"extra": [
+		"Custom hash algoritm",
+		"Custom coin logic",
+		"iOS wallet"
+	],
+	"steps": [
+		"Deposit 5%",
+		"Coin parameters",
+		"Demo release (our hosting) + Windows client",
+		"Deposit 30%",
+		"Full production release (your hosting)",
+		"Final payment"
+	]
+}

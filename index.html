@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>DLT</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
+		<!--
+		CSS
+		============================================= -->
+		<link rel="stylesheet" href="css/linearicons.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div id="body">
+		<div id="top"></div>
+		<!-- Start Header Area -->
+		<header class="default-header">
+			<div class="sticky-header">
+				<div class="container">
+					<div class="header-content d-flex justify-content-between align-items-center">
+						<div class="logo">
+							<a href="#top" class="smooth" v-if="brandImage">
+								<img :src="brandImage" :alt="brandName">
+							</a>
+							<a href="#top" class="smooth" v-else><span class="brand-text">{{ brandName }}</span></a>
+						</div>
+						<div class="right-bar d-flex align-items-center">
+							<nav class="d-flex align-items-center">
+								<ul class="main-menu" v-for="m in menu">
+									<li><a :href="m.link">{{ m.title }}</a></li>
+								</ul>
+								<a href="#" class="mobile-btn"><span class="lnr lnr-menu"></span></a>
+							</nav>
+							<div class="search relative" v-if="options.search">
+								<span class="lnr lnr-magnifier"></span>
+								<form action="#" class="search-field">
+									<input type="text" placeholder="Search here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search here'">
+									<button class="search-submit"><span class="lnr lnr-magnifier"></span></button>
+								</form>
+							</div>
+							<div class="header-social d-flex align-items-center">
+								<a href="#" v-if="facebookLink"><i class="fa fa-facebook"></i></a>
+								<a href="#" v-if="twitterLink"><i class="fa fa-twitter"></i></a>
+								<a href="#" v-if="linkedInLink"><i class="fa fa-linkedin"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- End Header Area -->
+		<!-- Start Banner Area -->
+		<section class="banner-area relative" v-if="options.hero">
+			<div class="overlay overlay-bg"></div>
+			<div class="container">
+				<div class="row fullscreen justify-content-center align-items-center">
+					<div class="col-lg-8">
+						<div class="banner-content text-center">
+							<p class="text-uppercase text-white">{{ hero.title }}</p>
+							<h1 class="text-uppercase text-white">{{ hero.description }}</h1>
+							<a :href="hero.buttonLink" class="primary-btn banner-btn">{{ hero.buttonTitle }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Banner Area -->
+		<!-- Start About Area -->
+		<section id="about" class="section-half gray-bg" v-if="options.about">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="section-title text-center">
+							<p class="text-uppercase">{{ aboutTitle }}</p>
+							<h3>{{ aboutDescription }}</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div :class="'col-md-' + (12/aboutServices.length)" v-for="s in aboutServices">
+						<figure class="signle-service">
+							<img :src="s.image" class="img-fluid" alt="">
+							<figcaption class="text-center">
+								<h5 class="text-uppercase">{{ s.title }}</h5>
+								<p>{{ s.description }}</p>
+								<a :href="s.buttonLink" class="primary-btn d-inline-flex align-items-center">{{ s.buttonTitle }}<span class="lnr lnr-arrow-right"></span></a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End About Area -->
+		<!-- Start Product Area -->
+		<section id="services" class="title-bg section-full" v-if="options.services">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-white text-uppercase">{{ competencyTitle }}</p>
+							<h2 class="text-white h1">{{ competencyDescription }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div :class="'col-lg-' + (12/competency.length)" v-for="c in competency">
+						<div class="single-product">
+							<div class="icon">
+								<span :class="c.icon"></span>
+							</div>
+							<div class="desc">
+								<h4>{{ c.title }}</h4>
+								<p>{{ c.description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Product Area -->
+		<!-- Start Progress Bar Area -->
+		<div class="container pt-150" v-if="options.progress">
+			<div class="row">
+				<div :class="'col-lg-' + (12/progress.length) + ' d-flex justify-content-center'" v-for="p in progress">
+					<div class="list text-center">
+						<div class="list-item">
+							<div class="progressBar progressBar--animateNone" :data-progress="p.progress">
+								<svg class="progressBar-contentCircle"  viewBox="0 0 200 200">
+									<circle transform="rotate(-90, 100, 100)" class="progressBar-background" cx="100" cy="100" r="95" />
+									<circle transform="rotate(-90, 100, 100)" class="progressBar-circle" cx="100" cy="100" r="95" />
+								</svg>
+								<span class="progressBar-percentage progressBar-percentage-count"></span>
+							</div>
+						</div>
+						<p class="text-uppercase">{{ p.title }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Progress Bar Area -->
+		<!-- Start shuffle Area -->
+		<section id="protfolio" class="section-full" v-if="options.works">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-uppercase">{{ workTitle }}</p>
+							<h2 class="h1">{{ workDescription }}</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="controls d-flex flex-wrap justify-content-center">
+					<a class="filter active" data-filter="all">All</a>
+					<a class="filter" v-for="w in workCategories" :data-filter="'.category-' + w.index">{{ w.name }}</a>
+				</div>
+			</div>
+
+			<div id="filter-content" class="row no-gutters mt-70">
+				<div v-for="w in works" :class="'mix ' + w.categories + ' col-lg-3 col-md-4 col-sm-6 single-filter-content content-' + w.index" :data-background="w.image" :data-myorder="w.index">
+					<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
+						<p class="text-white">{{ w.title }}</p>
+						<div class="line"></div>
+						<h5 class="text-white text-uppercase">{{ w.tags }}</h5>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End shuffle Area -->
+		<!-- Start Team member Area -->
+		<section id="team" class="pb-150" v-if="options.team">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-uppercase">{{ teamTitle }}</p>
+							<h2 class="h1">{{ teamDescription }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6" v-for="t in team">
+						<div class="single-member">
+							<div class="thumb relative single-member-back-img" :data-background="t.image">
+								<div class="overlay overlay-member d-flex flex-column justify-content-end align-items-center">
+									<p class="text-white">{{ t.bio }}</p>
+									<div class="line"></div>
+									<div class="social d-flex align-items-center justify-content-center">
+										<a :href="t.facebookLink" v-if="t.facebookLink"><i class="fa fa-facebook"></i></a>
+										<a :href="t.twitterLink" v-if="t.twitterLink"><i class="fa fa-twitter"></i></a>
+										<a :href="t.linkedInLink" v-if="t.linkedInLink"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="desc text-center">
+								<h5 class="text-uppercase">{{ t.name }}</h5>
+								<p>{{ t.position }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Team member Area -->
+
+		<!-- Start Digital Studio -->
+		<section id="direct" class="section-full studio-area" v-if="options.direct">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="studio-content">
+							<p class="text-uppercase text-white">{{ directTitle }}</p>
+							<h2 class="h1 text-white text-uppercase mb-20">{{ directMotto }}</h2>
+							<p class="text-white mb-30">{{ directDescription }}</p>
+							<a :href="directButtonLink" class="primary-btn text-white d-inline-flex align-items-center">{{ directButtonTitle }}<span class="lnr lnr-arrow-right"></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Digital Studio -->
+		<!-- Start Pricing Area -->
+		<section id="prices" class="section-half" v-if="options.pricing">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-uppercase">{{ pricingTitle }}</p>
+							<h2 class="h1">{{ pricingDescription }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row price-cards">
+					<div class="col-md-4 price-card" v-for="p in prices">
+						<div class="single-pricing-table">
+							<div class="top">
+								<div class="head text-center">
+									<span :class="p.logo"></span><br>
+									<h5 class="text-white text-uppercase">{{ p.title }}</h5>
+								</div>
+								<div class="package text-center">
+									<div class="price">{{ p.price }}</div>
+									<span class="text-white">{{ p.payment }}</span>
+								</div>
+							</div>
+
+							<div class="bottom text-center pb-15">
+								<ul class="feature text-center mb-15 price-card-feature">
+									<li v-for="f in p.features">{{ f }}</li>
+								</ul>
+								
+								<a v-if="p.buttonLink" :href="p.buttonLink" class="primary-btn text-uppercase d-inline-flex align-items-center">{{ p.buttonTitle }}<span class="lnr lnr-arrow-right"></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Pricing Area -->
+		<!-- Start Explanation Area -->
+		<section id="explanation" class="section-half" v-if="options.explanation">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="text-left">
+							<p class="text-uppercase h4">{{ requirementsTitle }}</p>
+							<h3 class="h5 ml-20 mt-20">
+								<ul>
+									<li v-for="r in requirements">- {{ r }}</li>
+								</ul>
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="pt-80 mr-10">
+							<div class="desc">
+								<h4>Not included (required)</h4>
+								<p>
+									<ul>
+										<li v-for="t in notIncluded">- {{ t }}</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="pt-80 ml-10 mr-10">
+							<div class="desc">
+								<h4>Extra price</h4>
+								<p>
+									<ul>
+										<li v-for="t in extra">- {{ t }}</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="'col-lg-4">
+						<div class="pt-80 ml-10">
+							<div class="desc">
+								<h4>Execution steps</h4>
+								<p>
+									<ul>
+										<li v-for="(t, index) in steps">- {{ t }}</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Start Testimonial Area -->
+		<section class="section-full gray-bg" v-if="options.testimonial">
+			<div class="container">
+				<div class="active-testimonial-carousel">
+					<div class="single-testimonial" v-for="t in testimonials">
+						<img :src="t.image" class="img-circle" alt="">
+						<p>{{ t.quote }}</p>
+						<div class="author text-center">
+							<h6 class="text-uppercase"><a :href="t.fromLink">{{ t.from }}</a></h6>
+							<span>{{ t.fromPosition }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Testimonial Area -->
+		<!-- Start Publish Area -->
+		<section id="blog" class="section-full" v-if="options.blog">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-uppercase">{{ blogTitle }}</p>
+							<h2 class="h1">{{ blogDescription }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div :class="'col-lg-' + 3 * (4 / blog.length)" v-for="b in blog">
+						<div class="single-publish">
+							<img :src="b.image" class="img-fluid" alt="">
+							<div class="top">
+								<div class="mb-15 d-flex">
+									<a :href="b.link">{{ b.published }}</a>
+									<span class="line">|</span>
+									<a :href="b.link">By {{ b.author }}</a>
+								</div>
+								<h6 class="text-uppercase"><a href="#">{{ b.title }}</a></h6>
+							</div>
+							<p class="mb-30">{{ b.description }}</p>
+							<a :href="b.link" class="details-btn d-flex justify-content-center align-items-center"><span class="details">{{ blogEntryButton }}</span><span class="lnr lnr-arrow-right"></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Publish Area -->
+		<!-- Start Contact Area -->
+		<section id="contact" class="section-full gray-bg" v-if="options.contact">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="product-area-title text-center">
+							<p class="text-uppercase">{{ contactTitle }}</p>
+							<h2 class="h1">{{ contactDescription }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 mt-30">
+						<div class="row">
+							<div class="pl-30 col-lg-12">
+								{{ contactFiller }}
+							</div>
+							<div class="col-sm-6" v-if="contactAddress">
+								<div class="address mt-20">
+									<h6 class="text-uppercase mb-15">Our Address</h6>
+									<p>{{ contactAddress }}</p>
+								</div>
+							</div>
+							<div class="col-sm-6" v-if="contactPhone">
+								<div class="address mt-20">
+									<h6 class="text-uppercase mb-15">Phone Number</h6>
+									<a :href="'tel:' + contactPhone">{{ contactPhone }}</a> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 mt-30">
+						<form id="myForm" :action="contactFormLink" method="post" class="contact-form">
+							<div class="single-input color-2 mb-10">
+								<input type="text" name="fname" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required>
+							</div>
+							<div class="single-input color-2 mb-10">
+								<input type="email" name="email" placeholder="Email Address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" required>
+							</div>
+							<div class="single-input color-2 mb-10">
+								<input type="text" name="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" required>
+							</div>
+
+							<div class="single-input color-2 mb-10">
+								<textarea name="message" placeholder="Type your message here..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your message here...'" required></textarea>
+							</div>
+							<div class="d-flex justify-content-end"><button class="mt-10 primary-btn d-inline-flex text-uppercase align-items-center">Send Message<span class="lnr lnr-arrow-right"></span></button></div>
+							<div class="alert"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Contact Area -->
+		<!-- Start Cta Area -->
+		<section class="cta-area" v-if="options.return">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8 d-flex no-flex-xs justify-content-between align-items-center">
+						<h5 class="text-uppercase text-white">{{ returnTitle }}</h5>
+						<a :href="returnLink" class="primary-btn d-inline-flex text-uppercase text-white align-items-center">{{ returnButton }}<span class="lnr lnr-arrow-right"></span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Cta Area -->
+		<footer class="section-full">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-footer-widget">
+							<h6 class="text-white text-uppercase mb-20">{{ footerAboutTitle }}</h6>
+							<p>{{ footerAbout }}</p>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-footer-widget">
+							<h6 class="text-white text-uppercase mb-20">Navigation Links</h6>
+							<div class="row">
+								<span class="col-lg-6" v-for="m in menu"><a :href="m.link">{{ m.title }}</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-footer-widget">
+							<h6 class="text-white text-uppercase mb-20">Newsletter</h6>
+							<p>{{ subscriptionAbout }}</p>
+							<div id="mc_embed_signup">
+								<form target="_blank" novalidate="novalidate" :action="subscriptionUrl" method="get" class="subscription relative d-flex justify-content-center">
+									<input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required>
+									<div style="position: absolute; left: -5000px;">
+										<input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
+									</div>
+									<button type="submit" class="newsletter-btn" name="subscribe"><span class="lnr lnr-location"></span></button>
+									<div class="info"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6" v-if="false">
+						<div class="single-footer-widget">
+							<h6 class="text-white text-uppercase mb-20">Instafeed</h6>
+							<ul class="instafeed d-flex flex-wrap">
+								<li><img src="img/i1.jpg" alt=""></li>
+								<li><img src="img/i2.jpg" alt=""></li>
+								<li><img src="img/i3.jpg" alt=""></li>
+								<li><img src="img/i4.jpg" alt=""></li>
+								<li><img src="img/i5.jpg" alt=""></li>
+								<li><img src="img/i6.jpg" alt=""></li>
+								<li><img src="img/i7.jpg" alt=""></li>
+								<li><img src="img/i8.jpg" alt=""></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom d-flex justify-content-between align-items-center">
+					<p class="footer-text m-0">Copyright &copy; {{ years }}  |  All rights reserved to <a href="#">{{ brandName }}</a>. Designed by <a href="https://colorlib.com/wp">Colorlib</a>.</p>
+					<div class="footer-social d-flex align-items-center">
+						<a href="#" v-if="facebookLink"><i class="fa fa-facebook"></i></a>
+						<a href="#" v-if="twitterLink"><i class="fa fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		</div> <!-- #body -->
+
+		<script src="js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/jquery.ajaxchimp.min.js"></script>
+		<script src="js/jquery.sticky.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/mixitup.min.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
